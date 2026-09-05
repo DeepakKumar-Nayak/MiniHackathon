@@ -9,40 +9,17 @@ import { useNavigate } from 'react-router'
 
 function CreateTask() {
     const navigate = useNavigate()
-    const { editTask, setEditTask } = useContext(EditTaskContext)
     const { task, setAllTask } = useContext(TaskContext)
 
-    const { register, reset, getValues, handleSubmit } = useForm({
-        defaultValues: {
-            task: editTask?.task || ""
-        }
-    })
+    const { register, reset, getValues, handleSubmit } = useForm()
 
     function AddTask() {
         const data = getValues()
-
-        if (editTask.id) {
-            const updatedTask = task.map((item) => (
-                item.id === editTask.id ? {...item, task: data.task } : item
-            ))
-            console.log(updatedTask)
-            setAllTask(updatedTask)
-            localStorage.setItem('tasks', JSON.stringify(updatedTask))
-            setEditTask(null)
-            reset({task:""})
-            navigate('/')
-            
-        } else {
-            
-            const newData = [...task, { ...data, id: nanoid(), isCompleted: false }]
-            setAllTask(newData)
-            localStorage.setItem('tasks', JSON.stringify(newData))
-            reset()
-        }
-
-
-
-
+        const newData = [...task, { ...data, id: nanoid(), isCompleted: false }]
+        setAllTask(newData)
+        localStorage.setItem('tasks', JSON.stringify(newData))
+        reset()
+        navigate("/")
     }
 
     return (

@@ -1,30 +1,21 @@
-import React, { use, useContext, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { TaskContext } from '../Context/TaskContext'
 import { useNavigate } from 'react-router'
-import { EditTaskContext } from '../Context/EditTaskContext'
 import { Link } from "react-router"
 function Home() {
   const { task, setAllTask } = useContext(TaskContext)
-  const { setEditTask } = useContext(EditTaskContext)
   const navigate = useNavigate()
 
   useEffect(() => {
     console.log(task)
   }, [task])
 
-
-  function HandleEdit(id) {
-    const getTaskForEdit = task.find((data) => data.id === id)
-    setEditTask(getTaskForEdit)
-    navigate('/create')
-
+  function HandleDelete(id) {
+    const DeleteTask = task.filter((data) => data.id !== id)
+    setAllTask(DeleteTask)
+    localStorage.setItem('tasks', JSON.stringify(DeleteTask))
+    navigate('/')
   }
-
-  // function HandleDelete(id) {
-  //   const DeleteTask = task.filter((data) => data.id !== id)
-  //   setAllTask(DeleteTask)
-  //   navigate('/')
-  // }
 
   return (
     <div className='home-container text-white w-[800px] mt-8'>
