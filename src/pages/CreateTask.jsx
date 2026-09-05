@@ -1,8 +1,7 @@
-import React, { createContext, useContext } from 'react'
+import React, {useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import { nanoid } from 'nanoid'
 import { TaskContext } from '../Context/TaskContext'
-import { EditTaskContext } from '../Context/EditTaskContext'
 import { useNavigate } from 'react-router'
 
 
@@ -15,7 +14,7 @@ function CreateTask() {
 
     function AddTask() {
         const data = getValues()
-        const newData = [...task, { ...data, id: nanoid(), isCompleted: false }]
+        const newData = [...task, { ...data, id: nanoid(), isCompleted: false}]
         setAllTask(newData)
         localStorage.setItem('tasks', JSON.stringify(newData))
         reset()
