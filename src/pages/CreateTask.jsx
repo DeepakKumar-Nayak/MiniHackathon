@@ -22,11 +22,11 @@ function CreateTask() {
     }
 
     return (
-        <div className='create-task mt-10'>
-            <form className='w-[500px] flex flex-col justify-between gap-5' onSubmit={handleSubmit(AddTask)}>
+        <div className='create-task mt-10 w-screen h-[100%] flex justify-around items-center'>
+            <form className='w-[600px] flex flex-col justify-between gap-5' onSubmit={handleSubmit(AddTask)}>
                 <input className='border-2 w-full py-2 px-1' type="text" placeholder='Enter Your Task Here' {...register('task')} />
                 <input type="text" className='border-2 w-full py-2 px-1' placeholder='Enter Description' {...register('description')} />
-                <input className='border-2 px-5 py-2' type="submit" value="Submit"/>
+                <input className='border-2 px-5 py-2 bg-white font-bold text-black' type="submit" value="Submit"/>
             </form>
         </div>
     )

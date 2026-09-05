@@ -15,12 +15,16 @@ function CompletedTask() {
     }
 
     return (
-        <div className='completed-container w-[300px]'>
+        <div className='completed-container w-[600px]'>
             {
                 CompletedTask.map((data)=>(
-                    <div className="show-completed-task w-full flex justify-between mt-10">
-                        <h1 className='w-full'>{data.task}</h1>
-                        <button className='border-2 px-4'>Completed</button>
+                    <div className="show-completed-task w-full flex justify-between mt-10 items-center">
+                        <div className="task-info"> 
+                        <h1 className='w-full text-2xl'>{data.task}</h1>
+                        <h1 className='text-l w-[400px]'>{data.description}</h1>
+                        </div>
+                        
+                        <button className='border-2 px-4 py-2 bg-green-900'>Completed</button>
                     </div>
                     
                     

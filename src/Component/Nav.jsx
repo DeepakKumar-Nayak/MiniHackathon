@@ -4,12 +4,12 @@ import { Link } from 'react-router'
 function Nav() {
     return (
         <div className='navbar flex gap-5'>
-            <Link to="/">Home</Link>
-            <Link to="/create">
-                <button>Create Task</button>
+            <Link className='bg-white text-black px-4 py-1 cursor-pointer rounded-xs' to="/">Home</Link>
+            <Link className='bg-white text-black px-4 py-1 rounded-xs'  to="/create">
+                <button className='cursor-pointer'>Create Task</button>
             </Link>
-            <Link to="/completed">Completed Task</Link>
-            <Link to="/active">Active Task</Link>
+            <Link className='bg-white text-black px-4 py-1 cursor-pointer rounded-xs'  to="/completed">Completed Task</Link>
+            <Link className='bg-white text-black px-4 py-1 cursor-pointer rounded-xs'  to="/active">Active Task</Link>
         </div>
     )
 }

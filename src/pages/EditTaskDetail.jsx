@@ -36,7 +36,7 @@ function EditTaskDetail() {
             <form className='flex flex-col gap-5 mt-5' onSubmit={handleSubmit(EditData)}>
                 <input className='w-full border-2 px-2 py-2' type="text" placeholder='Get Your Data Edited Here' {...register('task')}/>
                 <input  className='w-full border-2 px-2 py-2' type="text" placeholder='Get Your Description Edit Here' {...register('description')}/>
-                <input className='border-2 px-5' type="submit" value="Update" />
+                <input className='border-2 px-5 py-2 bg-white text-black font-bold' type="submit" value="Update" />
             </form>
         </div>
     )
