@@ -20,7 +20,7 @@ function ActiveTask() {
                     
                     <div className='w-full flex justify-between items-center mt-10'>
                         <h1>{data.task}</h1>
-                        <button className='border-2 px-5 py-2'>Avtive</button>
+                        <button className='border-2 px-5 py-2'>Active</button>
                     </div>
                     
                     
