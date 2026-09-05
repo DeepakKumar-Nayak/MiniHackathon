@@ -20,8 +20,14 @@ function Home() {
 
   }
 
+  function HandleDelete(id){
+    const DeleteTask = task.filter((data)=> data.id!==id)
+    setAllTask(DeleteTask)
+    navigate('/')
+  }
+
   return (
-    <div className='home-container text-white w-[500px] mt-8'>
+    <div className='home-container text-white w-[800px] mt-8'>
     
         {
           task.map((data)=>(
@@ -31,6 +37,8 @@ function Home() {
                 <button className='border-2 px-6 py-2' onClick={()=> HandleEdit(data.id)}>Edit</button>
                 <button className='border-2 px-6 py-2' onClick={()=> HandleDelete(data.id)}>Delete</button>
                 <button className='border-2 px-6 py-2'>{data.isCompleted === false ? "NotComplicated" :"Complicated"}</button>
+                <button className='border-2 px-6 py-2'>{data.isCompleted === false ? "Active" :"Done n Dusted"}</button>
+                
               </div>
             </div>
           ))

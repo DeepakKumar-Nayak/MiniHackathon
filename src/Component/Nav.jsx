@@ -9,6 +9,7 @@ function Nav() {
                 <button>Create Task</button>
             </Link>
             <Link to="/completed">Completed Task</Link>
+            <Link to="/active">Active Task</Link>
         </div>
     )
 }
