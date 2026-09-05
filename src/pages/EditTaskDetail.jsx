@@ -12,7 +12,8 @@ function EditTaskDetail() {
     const {register, handleSubmit, getValues} = useForm({
 
         defaultValues:{
-            task:getTaskToEdit.task || ""
+            task:getTaskToEdit.task || "",
+            description:getTaskToEdit.description || ""
         }
     })
 
@@ -31,9 +32,10 @@ function EditTaskDetail() {
    
 
     return (
-        <div className='form-container w-[400px]'>
-            <form className='flex gap-5 mt-5' onSubmit={handleSubmit(EditData)}>
-                <input className='w-full border-2 px-2' type="text" placeholder='Get Your Data Edited Here' {...register('task')}/>
+        <div className='form-container w-[600px]'>
+            <form className='flex flex-col gap-5 mt-5' onSubmit={handleSubmit(EditData)}>
+                <input className='w-full border-2 px-2 py-2' type="text" placeholder='Get Your Data Edited Here' {...register('task')}/>
+                <input  className='w-full border-2 px-2 py-2' type="text" placeholder='Get Your Description Edit Here' {...register('description')}/>
                 <input className='border-2 px-5' type="submit" value="Update" />
             </form>
         </div>

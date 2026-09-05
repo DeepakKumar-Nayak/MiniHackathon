@@ -31,7 +31,11 @@ function Home() {
       {
         task.map((data) => (
           <div className="task-container flex w-full justify-between items-center mb-2">
-            <h1>{data.task}</h1>
+            <div className="task-info flex flex-col">
+            <h1 className='text-2xl font-bold'>{data.task}</h1>
+            <h1 className='text-sm w-[300px]'>{data.description}</h1>
+            </div>
+            
             <div className="button-container flex gap-2">
               <Link to={`/edit/${data.id}`}>
                 <button className='border-2 px-6 py-2'>Edit</button>
