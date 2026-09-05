@@ -4,6 +4,7 @@ import Home from "../pages/Home"
 import CreateTask from "../pages/CreateTask"
 import CompletedTask from "../pages/CompletedTask"
 import ActiveTask from "../pages/ActiveTask"
+import EditTaskDetail from "../pages/EditTaskDetail"
 
 export const appRouter = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ export const appRouter = createBrowserRouter([
             {
                 path:"active",
                 Component:ActiveTask
+            },
+            {
+                path:"edit/:id", 
+                Component:EditTaskDetail
             }
         ]
     }
